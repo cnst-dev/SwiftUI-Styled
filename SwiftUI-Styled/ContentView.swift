@@ -15,9 +15,9 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
             StyledButton(title: "Done",
-                         leftIcon: .systemName(.checkmark))
+                         leftIcon: .symbolName(.checkmark))
             StyledButton(title: "Cancel",
-                         rightIcon: .systemName(.xmark)) {
+                         rightIcon: .symbolName(.xmark)) {
                 debugPrint("Cancel pressed")
             }
         }

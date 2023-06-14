@@ -40,6 +40,6 @@ struct StyledButton: View {
 struct StyledButton_Previews: PreviewProvider {
     static var previews: some View {
         StyledButton(title: "Done",
-                     leftIcon: .systemName(.checkmark))
+                     leftIcon: .symbolName(.checkmark))
     }
 }

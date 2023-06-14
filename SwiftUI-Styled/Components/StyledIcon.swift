@@ -11,7 +11,7 @@ struct StyledIcon: View {
 
     // MARK: Nested
     enum Name {
-        case systemName(SFSymbol)
+        case symbolName(SFSymbol)
         case assetName(String)
     }
 
@@ -21,7 +21,7 @@ struct StyledIcon: View {
     // MARK: Render
     var body: some View {
         switch name {
-        case .systemName(let name):
+        case .symbolName(let name):
             return Image(systemName: name.rawValue)
         case .assetName(let name):
             return Image(name)
@@ -31,6 +31,6 @@ struct StyledIcon: View {
 
 struct StyledIcon_Previews: PreviewProvider {
     static var previews: some View {
-        StyledIcon(name: .systemName(.bookmark))
+        StyledIcon(name: .symbolName(.bookmark))
     }
 }
