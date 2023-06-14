@@ -11,8 +11,8 @@ struct StyledButton: View {
 
     // MARK: Properties
     var title: String?
-    var leftIcon: String?
-    var rightIcon: String?
+    var leftIcon: StyledIcon.NameType?
+    var rightIcon: StyledIcon.NameType?
 
     // MARK: Actions
     var action: (() -> Void)?
@@ -24,13 +24,13 @@ struct StyledButton: View {
         } label: {
             HStack {
                 if let leftIcon = leftIcon {
-                    Image(systemName: leftIcon)
+                    StyledIcon(type: leftIcon)
                 }
                 if let title = title {
                     Text(title)
                 }
                 if let rightIcon = rightIcon {
-                    Image(systemName: rightIcon)
+                    StyledIcon(type: rightIcon)
                 }
             }
         }
@@ -39,6 +39,7 @@ struct StyledButton: View {
 
 struct StyledButton_Previews: PreviewProvider {
     static var previews: some View {
-        StyledButton(title: "Done", leftIcon: "checkmark.circle")
+        StyledButton(title: "Done",
+                     leftIcon: .systemName("checkmark.circle"))
     }
 }
