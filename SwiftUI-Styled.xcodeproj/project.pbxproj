@@ -13,6 +13,7 @@
 		CFF0873C2A39A29600988349 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF0873B2A39A29600988349 /* Preview Assets.xcassets */; };
 		CFF087452A39A93900988349 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF087442A39A93900988349 /* StyledButton.swift */; };
 		CFF087482A39B56000988349 /* StyledIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF087472A39B56000988349 /* StyledIcon.swift */; };
+		CFF0874B2A39BBCE00988349 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0874A2A39BBCE00988349 /* SFSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		CFF0873B2A39A29600988349 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CFF087442A39A93900988349 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		CFF087472A39B56000988349 /* StyledIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledIcon.swift; sourceTree = "<group>"; };
+		CFF0874A2A39BBCE00988349 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		CFF087332A39A29300988349 /* SwiftUI-Styled */ = {
 			isa = PBXGroup;
 			children = (
+				CFF087492A39BAEF00988349 /* Shared */,
 				CFF087432A39A8FB00988349 /* Components */,
 				CFF087342A39A29300988349 /* SwiftUIStyledApp.swift */,
 				CFF087362A39A29300988349 /* ContentView.swift */,
@@ -79,6 +82,14 @@
 				CFF087472A39B56000988349 /* StyledIcon.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CFF087492A39BAEF00988349 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0874A2A39BBCE00988349 /* SFSymbol.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			files = (
 				CFF087452A39A93900988349 /* StyledButton.swift in Sources */,
 				CFF087482A39B56000988349 /* StyledIcon.swift in Sources */,
+				CFF0874B2A39BBCE00988349 /* SFSymbol.swift in Sources */,
 				CFF087372A39A29300988349 /* ContentView.swift in Sources */,
 				CFF087352A39A29300988349 /* SwiftUIStyledApp.swift in Sources */,
 			);

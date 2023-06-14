@@ -9,17 +9,20 @@ import SwiftUI
 
 struct StyledIcon: View {
 
-    enum NameType {
-        case systemName(String)
+    // MARK: Nested
+    enum Name {
+        case systemName(SFSymbol)
         case assetName(String)
     }
 
-    let type: NameType
+    // MARK: Properties
+    let name: Name
 
+    // MARK: Render
     var body: some View {
-        switch type {
+        switch name {
         case .systemName(let name):
-            return Image(systemName: name)
+            return Image(systemName: name.rawValue)
         case .assetName(let name):
             return Image(name)
         }
@@ -28,6 +31,6 @@ struct StyledIcon: View {
 
 struct StyledIcon_Previews: PreviewProvider {
     static var previews: some View {
-        StyledIcon(type: .systemName("bookmark"))
+        StyledIcon(name: .systemName(.bookmark))
     }
 }
