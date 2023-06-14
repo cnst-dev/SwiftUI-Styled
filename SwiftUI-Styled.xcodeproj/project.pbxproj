@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CFF087352A39A29300988349 /* SwiftUI_StyledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF087342A39A29300988349 /* SwiftUI_StyledApp.swift */; };
+		CFF087352A39A29300988349 /* SwiftUIStyledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF087342A39A29300988349 /* SwiftUIStyledApp.swift */; };
 		CFF087372A39A29300988349 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF087362A39A29300988349 /* ContentView.swift */; };
 		CFF087392A39A29600988349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF087382A39A29600988349 /* Assets.xcassets */; };
 		CFF0873C2A39A29600988349 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF0873B2A39A29600988349 /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		CFF087312A39A29300988349 /* SwiftUI-Styled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Styled.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFF087342A39A29300988349 /* SwiftUI_StyledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_StyledApp.swift; sourceTree = "<group>"; };
+		CFF087342A39A29300988349 /* SwiftUIStyledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStyledApp.swift; sourceTree = "<group>"; };
 		CFF087362A39A29300988349 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFF087382A39A29600988349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFF0873B2A39A29600988349 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		CFF087332A39A29300988349 /* SwiftUI-Styled */ = {
 			isa = PBXGroup;
 			children = (
-				CFF087342A39A29300988349 /* SwiftUI_StyledApp.swift */,
+				CFF087342A39A29300988349 /* SwiftUIStyledApp.swift */,
 				CFF087362A39A29300988349 /* ContentView.swift */,
 				CFF087382A39A29600988349 /* Assets.xcassets */,
 				CFF0873A2A39A29600988349 /* Preview Content */,
@@ -75,6 +75,7 @@
 			buildConfigurationList = CFF0873F2A39A29600988349 /* Build configuration list for PBXNativeTarget "SwiftUI-Styled" */;
 			buildPhases = (
 				CFF0872D2A39A29300988349 /* Sources */,
+				CFF087422A39A37600988349 /* SwiftLint */,
 				CFF0872E2A39A29300988349 /* Frameworks */,
 				CFF0872F2A39A29300988349 /* Resources */,
 			);
@@ -132,13 +133,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CFF087422A39A37600988349 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nE\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFF0872D2A39A29300988349 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFF087372A39A29300988349 /* ContentView.swift in Sources */,
-				CFF087352A39A29300988349 /* SwiftUI_StyledApp.swift in Sources */,
+				CFF087352A39A29300988349 /* SwiftUIStyledApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "is.cnst.SwiftUI-Styled";
+				PRODUCT_BUNDLE_IDENTIFIER = "is.cnst.swiftui-styled";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "is.cnst.SwiftUI-Styled";
+				PRODUCT_BUNDLE_IDENTIFIER = "is.cnst.swiftui-styled";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,5 +1,5 @@
 //
-//  SwiftUI_StyledApp.swift
+//  SwiftUIStyledApp.swift
 //  SwiftUI-Styled
 //
 //  Created by const on 14.06.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SwiftUI_StyledApp: App {
+struct SwiftUIStyledApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
