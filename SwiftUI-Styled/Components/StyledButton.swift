@@ -11,8 +11,12 @@ struct StyledButton: View {
 
     // MARK: Properties
     var title: String?
+
     var leftIcon: StyledIcon.Name?
     var rightIcon: StyledIcon.Name?
+
+    var backgroundColor = Color.green
+    var foregroundColor = Color.white
 
     // MARK: Actions
     var action: (() -> Void)?
@@ -34,6 +38,10 @@ struct StyledButton: View {
                 }
             }
         }
+        .padding()
+        .background(backgroundColor)
+        .foregroundColor(foregroundColor)
+        .cornerRadius(12)
     }
 }
 
