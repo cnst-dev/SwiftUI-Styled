@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SFSymbol: String, CaseIterable {
+enum SFSymbol: String {
     case bookmark
     case checkmark = "checkmark.circle"
     case xmark = "xmark.circle"

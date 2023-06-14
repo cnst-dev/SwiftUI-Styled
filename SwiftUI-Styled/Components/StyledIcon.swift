@@ -12,7 +12,7 @@ struct StyledIcon: View {
     // MARK: Nested
     enum Name {
         case symbolName(SFSymbol)
-        case assetName(String)
+        case assetName(Assets)
     }
 
     // MARK: Properties
@@ -24,13 +24,13 @@ struct StyledIcon: View {
         case .symbolName(let name):
             return Image(systemName: name.rawValue)
         case .assetName(let name):
-            return Image(name)
+            return Image(name.rawValue)
         }
     }
 }
 
 struct StyledIcon_Previews: PreviewProvider {
     static var previews: some View {
-        StyledIcon(name: .symbolName(.bookmark))
+        StyledIcon(name: .assetName(.xmark))
     }
 }
