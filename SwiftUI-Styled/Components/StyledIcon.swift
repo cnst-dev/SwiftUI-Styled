@@ -16,7 +16,12 @@ struct StyledIcon: View {
     }
 
     // MARK: Properties
-    let name: Name
+    private let name: Name
+
+    // MARK: Inits
+    init(name: Name) {
+        self.name = name
+    }
 
     // MARK: Render
     var body: some View {

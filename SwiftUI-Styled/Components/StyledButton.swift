@@ -10,16 +10,31 @@ import SwiftUI
 struct StyledButton: View {
 
     // MARK: Properties
-    var title: String?
+    private let title: String?
 
-    var leftIcon: StyledIcon.Name?
-    var rightIcon: StyledIcon.Name?
+    private let leftIcon: StyledIcon.Name?
+    private let rightIcon: StyledIcon.Name?
 
-    var backgroundColor = Color.green
-    var foregroundColor = Color.white
+    private let backgroundColor: Color
+    private let foregroundColor: Color
 
     // MARK: Actions
-    var action: (() -> Void)?
+    private let action: (() -> Void)?
+
+    // MARK: Inits
+    init(title: String? = nil,
+         leftIcon: StyledIcon.Name? = nil,
+         rightIcon: StyledIcon.Name? = nil,
+         backgroundColor: Color = .clear,
+         foregroundColor: Color = .blue,
+         action: (() -> Void)? = nil) {
+        self.title = title
+        self.leftIcon = leftIcon
+        self.rightIcon = rightIcon
+        self.backgroundColor = backgroundColor
+        self.foregroundColor = foregroundColor
+        self.action = action
+    }
 
     // MARK: Render
     var body: some View {
