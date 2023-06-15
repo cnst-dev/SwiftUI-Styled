@@ -15,22 +15,9 @@ struct StyledButton: View {
     let leftIcon: StyledIcon.Name?
     let rightIcon: StyledIcon.Name?
 
-    let background: Background?
     let foregroundColor: Color
 
-    private var backgroundColor: Color {
-        guard case let .fill(color) = background else {
-            return .clear
-        }
-        return color
-    }
-
-    private var stroke: (color: Color, width: CGFloat) {
-        guard case let .stroke(color, width) = background else {
-            return (.clear, 0)
-        }
-        return (color, width)
-    }
+    let style: ButtonStyle
 
     // MARK: Actions
     let action: (() -> Void)?
@@ -39,7 +26,7 @@ struct StyledButton: View {
     init(title: String? = nil,
          leftIcon: StyledIcon.Name? = nil,
          rightIcon: StyledIcon.Name? = nil,
-         background: Background? = nil,
+         background: Background = .clear,
          foregroundColor: Color = .blue,
          action: (() -> Void)? = nil) {
         self.title = title
@@ -47,7 +34,8 @@ struct StyledButton: View {
         self.leftIcon = leftIcon
         self.rightIcon = rightIcon
 
-        self.background = background
+        self.style = background.styles
+
         self.foregroundColor = foregroundColor
 
         self.action = action
@@ -71,21 +59,35 @@ struct StyledButton: View {
             }
         }
         .padding()
-        .background(backgroundColor)
+        .background(style.background)
         .foregroundColor(foregroundColor)
-        .cornerRadius(12)
-        .overlay(RoundedRectangle(cornerRadius: 12)
-            .strokeBorder(lineWidth: stroke.width)
-            .foregroundColor(stroke.color)
+        .cornerRadius(style.radius)
+        .overlay(RoundedRectangle(cornerRadius: style.radius)
+            .strokeBorder(lineWidth: style.stroke.width)
+            .foregroundColor(style.stroke.color)
         )
-
     }
 }
 
 // MARK: Types
 extension StyledButton {
+
     enum Background {
-        case fill(Color), stroke(Color, width: CGFloat)
+
+        case fill(color: Color, radius: CGFloat),
+             stroke(color: Color, width: CGFloat, radius: CGFloat),
+             clear
+
+        var styles: ButtonStyle {
+            switch self {
+            case .stroke(color: let color, width: let width, radius: let radius):
+                return ButtonStyle(background: .clear, stroke: (color, width), radius: radius)
+            case .fill(color: let color, radius: let radius):
+                return ButtonStyle(background: color, stroke: (color: .clear, width: 0), radius: radius)
+            case .clear:
+                return ButtonStyle(background: .clear, stroke: (color: .clear, width: 0), radius: 0)
+            }
+        }
     }
 }
 
@@ -93,7 +95,7 @@ struct StyledButton_Previews: PreviewProvider {
     static var previews: some View {
         StyledButton(title: "Done",
                      leftIcon: .symbolName(.checkmark),
-                     background: .stroke(.blue, width: 2),
-                     foregroundColor: .blue)
+                     background: .stroke(color: .green, width: 2, radius: 10),
+                     foregroundColor: .green)
     }
 }
