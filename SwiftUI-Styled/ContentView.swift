@@ -17,7 +17,8 @@ struct ContentView: View {
             StyledButton(title: "Done",
                          leftIcon: .symbolName(.checkmark))
             StyledButton(title: "Cancel",
-                         rightIcon: .symbolName(.xmark)) {
+                         rightIcon: .symbolName(.xmark),
+                         background: .stroke(.blue, width: 2)) {
                 debugPrint("Cancel pressed")
             }
         }

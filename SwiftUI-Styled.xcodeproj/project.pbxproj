@@ -40,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF293D142A3B295300E07B1A /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				CFF087442A39A93900988349 /* StyledButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		CFF087282A39A29300988349 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +88,7 @@
 		CFF087432A39A8FB00988349 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CFF087442A39A93900988349 /* StyledButton.swift */,
+				CF293D142A3B295300E07B1A /* Button */,
 				CFF087472A39B56000988349 /* StyledIcon.swift */,
 			);
 			path = Components;

@@ -9,14 +9,8 @@ import SwiftUI
 
 struct StyledIcon: View {
 
-    // MARK: Nested
-    enum Name {
-        case symbolName(SFSymbol)
-        case assetName(Assets)
-    }
-
     // MARK: Properties
-    private let name: Name
+    let name: Name
 
     // MARK: Inits
     init(name: Name) {
@@ -31,6 +25,14 @@ struct StyledIcon: View {
         case .assetName(let name):
             return Image(name.rawValue)
         }
+    }
+}
+
+// MARK: Types
+extension StyledIcon {
+    enum Name {
+        case symbolName(SFSymbol)
+        case assetName(Assets)
     }
 }
 

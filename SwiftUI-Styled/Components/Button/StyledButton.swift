@@ -10,29 +10,46 @@ import SwiftUI
 struct StyledButton: View {
 
     // MARK: Properties
-    private let title: String?
+    let title: String?
 
-    private let leftIcon: StyledIcon.Name?
-    private let rightIcon: StyledIcon.Name?
+    let leftIcon: StyledIcon.Name?
+    let rightIcon: StyledIcon.Name?
 
-    private let backgroundColor: Color
-    private let foregroundColor: Color
+    let background: Background?
+    let foregroundColor: Color
+
+    private var backgroundColor: Color {
+        guard case let .fill(color) = background else {
+            return .clear
+        }
+        return color
+    }
+
+    private var stroke: (color: Color, width: CGFloat) {
+        guard case let .stroke(color, width) = background else {
+            return (.clear, 0)
+        }
+        return (color, width)
+    }
 
     // MARK: Actions
-    private let action: (() -> Void)?
+    let action: (() -> Void)?
 
     // MARK: Inits
     init(title: String? = nil,
          leftIcon: StyledIcon.Name? = nil,
          rightIcon: StyledIcon.Name? = nil,
-         backgroundColor: Color = .clear,
+         background: Background? = nil,
          foregroundColor: Color = .blue,
          action: (() -> Void)? = nil) {
         self.title = title
+
         self.leftIcon = leftIcon
         self.rightIcon = rightIcon
-        self.backgroundColor = backgroundColor
+
+        self.background = background
         self.foregroundColor = foregroundColor
+
         self.action = action
     }
 
@@ -57,12 +74,26 @@ struct StyledButton: View {
         .background(backgroundColor)
         .foregroundColor(foregroundColor)
         .cornerRadius(12)
+        .overlay(RoundedRectangle(cornerRadius: 12)
+            .strokeBorder(lineWidth: stroke.width)
+            .foregroundColor(stroke.color)
+        )
+
+    }
+}
+
+// MARK: Types
+extension StyledButton {
+    enum Background {
+        case fill(Color), stroke(Color, width: CGFloat)
     }
 }
 
 struct StyledButton_Previews: PreviewProvider {
     static var previews: some View {
         StyledButton(title: "Done",
-                     leftIcon: .symbolName(.checkmark))
+                     leftIcon: .symbolName(.checkmark),
+                     background: .stroke(.blue, width: 2),
+                     foregroundColor: .blue)
     }
 }
